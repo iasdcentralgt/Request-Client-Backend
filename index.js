@@ -2,31 +2,24 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const cors = require('cors');
-
+const peticionRoutes = require('./routes/peticionRoute');
+require('./config/db'); 
 
 app.use(express.json());
 app.use(cors());
+
+
 app.get('/', (req, res) => {
-  res.send('kljfldsj');
+  res.send('Backend Arriba');
 });
 
 
-
-const PeticionController = {};
-PeticionController.post = (req, res) => {
-  const { name } = req.body;
-  res.send({ user: name });
-}
-
-
-app.post('/', PeticionController.post)
+app.use('/api', peticionRoutes);
 
 
 app.listen(port, () => {
-  console.log("running...");
+  console.log(`Servidor  en el puerto ${port}`);
 });
-
-
 
 
 
