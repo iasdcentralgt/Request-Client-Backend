@@ -5,13 +5,14 @@ const { body } = require('express-validator');
 
 router.post('/cliente/peticiones', [
   body('nombre')
-    .isString().withMessage('El nombre debe ser una cadena de texto'),
+    .isString().withMessage('ERROR El nombre debe ser una cadena de texto'),
+    body('correo')
+    .isString().withMessage('ERROR El correo debe ser una cadena de texto'),
   body('telefono')
-    .isString().withMessage('El teléfono debe ser una cadena de texto'),
+    .isString().withMessage('ERROR El teléfono debe ser una cadena de texto'),
   body('contenido')
     .notEmpty().withMessage('ERROR peticion obligatoria')
     .isString().withMessage('ERROR La peticion debe ser una cadena de texto'),
- 
   body('estado')
     .notEmpty().withMessage('ERROR El estado es obligatorio')
     .isInt().withMessage('El estado debe ser un número entero')
