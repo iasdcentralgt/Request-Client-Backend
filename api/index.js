@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const cors = require('cors');
-const peticionRoutes = require('../routes/peticionRoute');
+const peticionRoute = require('../routes/peticionRoute');
 require('../config/db'); 
 
 app.use(express.json());
@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.use('/api', peticionRoutes);
+app.use('/api', peticionRoute);
 
 
 app.listen(port, () => {
