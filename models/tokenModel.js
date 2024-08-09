@@ -1,9 +1,9 @@
 const db = require('../config/db');
 
-exports.crearToken = (token, usuario_id, expira_en, callback) => {
+exports.crearToken = (token, usuario_id, expires, callback) => {
     db.query(
-        'INSERT INTO access_token (token, usuario_id, expira_en) VALUES (?, ?, ?)',
-        [token, usuario_id, expira_en],
+        'INSERT INTO access_token (token, usuario_id, expires) VALUES (?, ?, ?)',
+        [token, usuario_id, expires],
         callback
     );
 };
