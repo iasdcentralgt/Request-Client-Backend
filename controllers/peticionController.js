@@ -22,7 +22,7 @@ exports.CrearPeticion = (req, res) => {
 
   const nuevaPeticion = {
     ...req.body,
-    fecha:fechaActual
+    fecha: fechaActual
   }
   Peticion.Crear(nuevaPeticion, (err, result) => {
     if (err) {
@@ -31,3 +31,26 @@ exports.CrearPeticion = (req, res) => {
     res.status(201).json({ id: result.insertId, ...nuevaPeticion });
   });
 };
+
+exports.CambiarEstadoPeticion = (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { estado, id_petition } = req.body;
+  Peticion.CambiarEstado(estado, id_petition, (err, result) => {
+    console.log(result);
+    if (err) {
+      return res.status(500).send(err);
+    }
+    res.status(200).json({ data: { message: 'Updated' } });
+  });
+}
+
+
+
+
+
+
+
