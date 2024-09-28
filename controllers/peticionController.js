@@ -44,7 +44,7 @@ exports.CambiarEstadoPeticion = (req, res) => {
     if (err) {
       return res.status(500).send(err);
     }
-    res.status(200).json({ data: { message: 'Updated' } });
+    res.status(200).json({ data: { message: 'Updated', estado, id_petition } });
   });
 }
 
