@@ -6,8 +6,9 @@ const peticionRoute = require('../routes/peticionRoute');
 const usrRoutes = require('../routes/userRoutes');
 const privilegioRoutes = require('../routes/privRoutes');
 const authRoutes = require('../routes/authRoutes');
+const semanaRoutes = require('../routes/semanaRoutes');
 
-require('../config/db'); 
+require('../config/db');
 
 app.use(express.json());
 app.use(cors());
@@ -22,6 +23,7 @@ app.use('/api', peticionRoute);
 app.use('/api', usrRoutes);
 app.use('/api', privilegioRoutes);
 app.use('/api', authRoutes);
+app.use('/api', semanaRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor  en el puerto ${port}`);
