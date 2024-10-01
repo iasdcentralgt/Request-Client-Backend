@@ -6,6 +6,7 @@ const peticionRoute = require('../routes/peticionRoute');
 const usrRoutes = require('../routes/userRoutes');
 const privilegioRoutes = require('../routes/privRoutes');
 const authRoutes = require('../routes/authRoutes');
+require('dotenv').config();
 
 require('../config/db'); 
 
