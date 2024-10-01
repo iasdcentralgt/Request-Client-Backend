@@ -6,7 +6,7 @@ const { body } = require('express-validator');
 router.post('/cliente/peticiones', [
   body('nombre')
     .isString().withMessage('ERROR El nombre debe ser una cadena de texto'),
-    body('correo')
+  body('correo')
     .isString().withMessage('ERROR El correo debe ser una cadena de texto'),
   body('telefono')
     .isString().withMessage('ERROR El teléfono debe ser una cadena de texto'),
@@ -20,5 +20,6 @@ router.post('/cliente/peticiones', [
 
 router.get('/admin/peticiones', peticionController.ObtenerPeticiones);
 router.get('/cliente/peticiones', peticionController.ObtenerPeticiones);
+router.post('/cliente/peticiones/estado', peticionController.CambiarEstadoPeticion);
 
 module.exports = router;
