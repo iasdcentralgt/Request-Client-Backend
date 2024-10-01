@@ -7,12 +7,7 @@ const mysql = require('mysql2');
 //   database: 'sql5720206'
 // });
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'Belfast16',
-  database: 'iasd_central'
-});
+
 
 db.connect((err) => {
   if (err) {
