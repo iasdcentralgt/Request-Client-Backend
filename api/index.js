@@ -7,7 +7,7 @@ const usrRoutes = require('../routes/userRoutes');
 const privilegioRoutes = require('../routes/privRoutes');
 const authRoutes = require('../routes/authRoutes');
 const semanaRoutes = require('../routes/semanaRoutes');
-const newsRoutes = require('../routes/newsRoutes');
+const newsRoutes = require('../routes/newsRouter');
 
 require('../config/db');
 
