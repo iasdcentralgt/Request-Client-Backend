@@ -16,12 +16,20 @@ exports.obtenerNoticias = (callback) => {
 
 // Actualizar una noticia por su ID
 exports.actualizarNoticia = (id, noticia, callback) => {
+  console.log(noticia);
+  console.log(id);
   const { title, content, conclution, image } = noticia;
-  db.query(
-    'UPDATE noticia SET title = ?, content = ?, conclution = ?, image = ? WHERE id = ?',
-    [title, content, conclution, image, id],
-    callback
-  );
+  try {
+
+    db.query(
+      'UPDATE noticia SET title = ?, content = ?, conclution = ?, image = ? WHERE id = ?',
+      [title, content, conclution, image, id],
+      callback
+    );
+  }
+  catch (err) {
+    console.log(err);
+  }
 };
 
 // Eliminar una noticia por su ID
