@@ -4,6 +4,7 @@ const Noticia = require('../models/newModel');
 exports.obtenerTodasLasNoticias = (req, res) => {
   Noticia.obtenerNoticias((err, result) => {
     if (err) {
+      console.log(err);
       return res.status(500).json({ error: 'Error al obtener las noticias' });
     }
     res.status(200).json({ data: result });
@@ -51,7 +52,7 @@ exports.actualizarNoticia = (req, res) => {
     image: req.body.image
   };
 
-  const noticiaId = req.params.id;
+  const noticiaId = req.body.id;
 
   // Verificar que el ID esté presente
   if (!noticiaId) {

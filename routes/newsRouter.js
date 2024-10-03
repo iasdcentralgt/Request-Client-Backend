@@ -9,7 +9,7 @@ router.get('/noticia/ultima', noticiaController.obtenerUltimaNoticia);
 
 router.post('/noticia', noticiaController.crearNoticia);
 
-router.put('/noticia/:id', noticiaController.actualizarNoticia);
+router.post('/noticia/update', noticiaController.actualizarNoticia);
 
 router.delete('/noticia/:id', noticiaController.eliminarNoticia);
 
