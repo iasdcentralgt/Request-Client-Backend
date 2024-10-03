@@ -7,6 +7,7 @@ const usrRoutes = require('../routes/userRoutes');
 const privilegioRoutes = require('../routes/privRoutes');
 const authRoutes = require('../routes/authRoutes');
 const semanaRoutes = require('../routes/semanaRoutes');
+const newsRoutes = require('../routes/newsRoutes');
 
 require('../config/db');
 
@@ -24,6 +25,7 @@ app.use('/api', usrRoutes);
 app.use('/api', privilegioRoutes);
 app.use('/api', authRoutes);
 app.use('/api', semanaRoutes);
+app.use('/api', newsRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor  en el puerto ${port}`);
