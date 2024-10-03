@@ -1,5 +1,5 @@
 
-const Noticia = require('../models/noticiaModel');
+const Noticia = require('../models/newModel');
 
 exports.obtenerTodasLasNoticias = (req, res) => {
   Noticia.obtenerNoticias((err, result) => {

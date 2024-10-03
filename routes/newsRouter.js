@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
-const noticiaController = require('../controllers/noticiaController');
+const noticiaController = require('../controllers/newController');
 
 router.get('/noticias', noticiaController.obtenerTodasLasNoticias);
 
